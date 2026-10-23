@@ -1,0 +1,40 @@
+{
+  "rules_version": "feaf59592dcb",
+  "tagger": "mock-pit-1/p1",
+  "cache": {
+    "honest": {
+      "hits": 0,
+      "misses": 110400
+    }
+  },
+  "holdout_start": "2019-06-10",
+  "holdout_unlocked": true,
+  "n_rows_dev": 44016,
+  "n_rows_holdout": 11040,
+  "splits": 5,
+  "args": {
+    "data": "synthetic",
+    "out": "results/power/t24_d2400_s4",
+    "n_tickers": 24,
+    "n_days": 2400,
+    "horizon": 5,
+    "n_splits": 5,
+    "embargo": 5,
+    "holdout_frac": 0.2,
+    "tau": 0.02,
+    "cost_bps": 10.0,
+    "tag_lag": 20,
+    "bootstrap": 300,
+    "seed": 4,
+    "signal": 0.25,
+    "leaky_demo": false,
+    "unlock_holdout": true,
+    "force_holdout": false
+  },
+  "python": "3.13.5",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "platform": "Linux-6.12.94+-x86_64-with-glibc2.41",
+  "data_sha256": "695f6e6cd831890f"
+}

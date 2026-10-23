@@ -1,0 +1,79 @@
+== 1/6 tests + frozen-plan hashes
+.......................                                                  [100%]
+=============================== warnings summary ===============================
+tests/test_hitai.py::test_csv_path_runs
+  /Users/cruparel/Documents/GitHub/indicator-validation-protocol/hitai/stats.py:111: RuntimeWarning: invalid value encountered in scalar divide
+    s = d.mean() / np.sqrt(v / T)
+
+tests/test_ivp.py::test_detects_planted
+  /Users/cruparel/Documents/GitHub/indicator-validation-protocol/ivp/protocol.py:75: RuntimeWarning: Mean of empty slice
+    cw = np.nanmean(eb - (ea - adj), axis=1)[rows]
+
+tests/test_ivp.py::test_detects_planted
+  /Users/cruparel/Documents/GitHub/indicator-validation-protocol/ivp/protocol.py:76: RuntimeWarning: Mean of empty slice
+    dm = np.nanmean(eb - ea, axis=1)[rows]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+23 passed, 3 warnings in 20.70s
+UNIVERSE_FROZEN.md: OK
+results_ivp/ANALYSIS_PLAN.md: OK
+ivp/__init__.py: OK
+ivp/dgp.py: OK
+ivp/indicators.py: OK
+  note: ivp/protocol.py intentionally differs from its frozen hash (the one disclosed amendment: optional score_from, see paper Sec. 3)
+== 2/6 power grid (synthetic, seeded)
+done 22000
+== 3/6 download 38 ETFs from Yahoo (personal-use terms; not redistributed)
+saved SPY 6740
+saved QQQ 6740
+saved DIA 6740
+saved IWM 6639
+saved MDY 6740
+saved IJR 6639
+saved EFA 6324
+saved EEM 5918
+saved EWJ 6740
+saved EWZ 6606
+saved EWG 6740
+saved EWU 6740
+saved EWC 6740
+saved EWA 6740
+saved EWH 6740
+saved FXI 5543
+saved XLB 6740
+saved XLE 6740
+saved XLF 6740
+saved XLI 6740
+saved XLK 6740
+saved XLP 6740
+saved XLU 6740
+saved XLV 6740
+saved XLY 6740
+saved VNQ 5550
+saved IYR 6624
+saved TLT 6096
+saved IEF 6096
+saved SHY 6096
+saved LQD 6096
+saved TIP 5754
+saved AGG 5802
+saved HYG 4914
+saved GLD 5514
+saved SLV 5152
+saved DBC 5209
+saved USO 5165
+== 4/6 leakage experiments (synthetic, seeded)
+== 5/6 real data: dev (2000-2019), one-shot holdout (2020-2026), semi-synthetic power
+== 6/6 tables, figure, compare with the paper
+[DIFF] results_ivp/power_grid.csv: 206400 numbers, max rel diff 1.19e-12, 1 over tol
+     /r7929c5: paper=-0.9879829091681546 rerun=-0.9879829091669778
+[MATCH] results/paper/power_summary.csv: 602 numbers, max rel diff 0
+[MATCH] results_ivp/leakage.json: 29 numbers, max rel diff 0
+[MATCH] results_ivp/real_dev.json: 115 numbers, max rel diff 2.2e-05
+[MATCH] results_ivp/real_holdout.json: 115 numbers, max rel diff 0.00266
+[MATCH] results_ivp/real_extra.json: 28 numbers, max rel diff 7.05e-05
+!! synthetic results differ from the paper (should be exact)
+Done. Tables: results/paper/power_summary.csv, results/paper/*.json; figure: results/paper/fig_ivp_power.pdf
+== write results/RESULTS.md
+wrote results/RESULTS.md (DIFF; 5 match, 1 diff)
+Share: git add results && git commit -m "Add run results" && git push

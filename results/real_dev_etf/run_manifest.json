@@ -1,0 +1,40 @@
+{
+  "rules_version": "feaf59592dcb",
+  "tagger": "mock-pit-1/p1",
+  "cache": {
+    "honest": {
+      "hits": 0,
+      "misses": 68320
+    }
+  },
+  "holdout_start": "2022-11-28",
+  "holdout_unlocked": false,
+  "n_rows_dev": 27286,
+  "n_rows_holdout": 6832,
+  "splits": 5,
+  "args": {
+    "data": "data/etf_long.csv",
+    "out": "results/real_dev_etf",
+    "n_tickers": 8,
+    "n_days": 1500,
+    "horizon": 5,
+    "n_splits": 5,
+    "embargo": 5,
+    "holdout_frac": 0.2,
+    "tau": 0.02,
+    "cost_bps": 10.0,
+    "tag_lag": 20,
+    "bootstrap": 300,
+    "seed": 0,
+    "signal": 0.25,
+    "leaky_demo": false,
+    "unlock_holdout": false,
+    "force_holdout": false
+  },
+  "python": "3.13.5",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "platform": "Linux-6.12.94+-x86_64-with-glibc2.41",
+  "data_sha256": "bf5da68d3b9d2bcf"
+}

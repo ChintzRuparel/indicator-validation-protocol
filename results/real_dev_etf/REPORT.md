@@ -1,0 +1,59 @@
+# HITAI run report (auto-generated)
+
+**No profitability claim.** Results are statistical evidence under stated assumptions only.
+
+rules_version `feaf59592dcb`, holdout starts 2022-11-28 (unlocked: False), dev rows 27286, walk-forward folds 5, trials 21.
+
+## Dev (walk-forward OOS) metrics
+
+| config                       | feature_set   | tag_variant   | model    |     n |   logloss |   brier |    ece |    auc |   base_rate |   ece_uncalibrated |   logloss_uncalibrated |   sharpe_gross_ann |   sharpe_net_ann |   mean_turnover |   mean_exposure |   psr_net |   max_dd_net |   dsr_net |   n_trials |
+|:-----------------------------|:--------------|:--------------|:---------|------:|----------:|--------:|-------:|-------:|------------:|-------------------:|-----------------------:|-------------------:|-----------------:|----------------:|----------------:|----------:|-------------:|----------:|-----------:|
+| rules_only|pit|logit         | rules_only    | pit           | logit    | 16373 |    0.6911 |  0.2487 | 0.0046 | 0.5029 |       0.545 |             0.0052 |                 0.6895 |             0.4366 |           0.2355 |          0.0709 |          0.9726 |    0.7617 |      -0.2381 |    0.4214 |         21 |
+| rules_only|pit|gbt           | rules_only    | pit           | gbt      | 16373 |    0.6908 |  0.2488 | 0.0051 | 0.5042 |       0.545 |             0.0059 |                 0.6901 |             0.3928 |           0.1014 |          0.0994 |          0.9576 |    0.6208 |      -0.284  |    0.2722 |         21 |
+| rules_only|pit|gbt_mono      | rules_only    | pit           | gbt_mono | 16373 |    0.6901 |  0.2484 | 0.0036 | 0.5026 |       0.545 |             0.0044 |                 0.6894 |             0.4209 |           0.2547 |          0.0584 |          0.9251 |    0.7792 |      -0.2347 |    0.4443 |         21 |
+| tech_only|pit|logit          | tech_only     | pit           | logit    | 16373 |    0.7004 |  0.2499 | 0.0095 | 0.5031 |       0.545 |             0.0193 |                 0.6913 |             0.3117 |          -0.1786 |          0.1557 |          0.7903 |    0.2918 |      -0.3297 |    0.0705 |         21 |
+| tech_only|pit|gbt            | tech_only     | pit           | gbt      | 16373 |    0.6975 |  0.2502 | 0.0152 | 0.4876 |       0.545 |             0.0382 |                 0.6986 |             0.4135 |           0.2499 |          0.0561 |          0.922  |    0.7748 |      -0.2444 |    0.4385 |         21 |
+| tech_only|pit|gbt_mono       | tech_only     | pit           | gbt_mono | 16373 |    0.7    |  0.2496 | 0.0116 | 0.4987 |       0.545 |             0.0223 |                 0.6942 |             0.4098 |           0.2233 |          0.0636 |          0.8749 |    0.7502 |      -0.2347 |    0.4071 |         21 |
+| rules_tech|pit|logit         | rules_tech    | pit           | logit    | 16373 |    0.6939 |  0.2491 | 0.0066 | 0.5006 |       0.545 |             0.0192 |                 0.6918 |             0.3144 |           0.1342 |          0.0594 |          0.9344 |    0.6577 |      -0.2182 |    0.3066 |         21 |
+| rules_tech|pit|gbt           | rules_tech    | pit           | gbt      | 16373 |    0.6993 |  0.2503 | 0.0153 | 0.4868 |       0.545 |             0.0379 |                 0.6985 |             0.4084 |           0.2415 |          0.057  |          0.9258 |    0.7673 |      -0.2504 |    0.4286 |         21 |
+| rules_tech|pit|gbt_mono      | rules_tech    | pit           | gbt_mono | 16373 |    0.7    |  0.2496 | 0.0116 | 0.4987 |       0.545 |             0.0223 |                 0.6942 |             0.4098 |           0.2233 |          0.0636 |          0.8749 |    0.7502 |      -0.2347 |    0.4071 |         21 |
+| hitai_full|pit|logit         | hitai_full    | pit           | logit    | 16373 |    0.6941 |  0.2492 | 0.0067 | 0.4975 |       0.545 |             0.0208 |                 0.692  |             0.1717 |          -0.0457 |          0.0742 |          0.9384 |    0.4446 |      -0.2546 |    0.145  |         21 |
+| hitai_full|pit|gbt           | hitai_full    | pit           | gbt      | 16373 |    0.6977 |  0.2501 | 0.0155 | 0.4907 |       0.545 |             0.039  |                 0.6988 |             0.3161 |           0.1532 |          0.0546 |          0.8329 |    0.6788 |      -0.2378 |    0.327  |         21 |
+| hitai_full|pit|gbt_mono      | hitai_full    | pit           | gbt_mono | 16373 |    0.6997 |  0.2496 | 0.0114 | 0.4988 |       0.545 |             0.0223 |                 0.6942 |             0.4135 |           0.2266 |          0.0637 |          0.8749 |    0.7533 |      -0.2347 |    0.4109 |         21 |
+| hitai_full|shuffled|logit    | hitai_full    | shuffled      | logit    | 16373 |    0.711  |  0.2509 | 0.009  | 0.495  |       0.545 |             0.0207 |                 0.6919 |             0.221  |          -0.0609 |          0.0952 |          0.9216 |    0.4262 |      -0.2263 |    0.1345 |         21 |
+| hitai_full|shuffled|gbt      | hitai_full    | shuffled      | gbt      | 16373 |    0.6987 |  0.2506 | 0.015  | 0.4857 |       0.545 |             0.0376 |                 0.699  |             0.2995 |           0.1578 |          0.0468 |          0.7894 |    0.6836 |      -0.2539 |    0.3321 |         21 |
+| hitai_full|shuffled|gbt_mono | hitai_full    | shuffled      | gbt_mono | 16373 |    0.7014 |  0.2499 | 0.0053 | 0.497  |       0.545 |             0.0225 |                 0.6942 |             0.3968 |           0.2144 |          0.0616 |          0.8422 |    0.7416 |      -0.2347 |    0.3966 |         21 |
+| hitai_full|lagged|logit      | hitai_full    | lagged        | logit    | 16373 |    0.6933 |  0.2491 | 0.0069 | 0.5011 |       0.545 |             0.0194 |                 0.6916 |             0.3269 |          -0.0809 |          0.1269 |          0.8414 |    0.4024 |      -0.2548 |    0.1217 |         21 |
+| hitai_full|lagged|gbt        | hitai_full    | lagged        | gbt      | 16373 |    0.7131 |  0.2515 | 0.0176 | 0.4907 |       0.545 |             0.0403 |                 0.699  |             0.4336 |           0.3234 |          0.0382 |          0.9605 |    0.8351 |      -0.2347 |    0.5268 |         21 |
+| hitai_full|lagged|gbt_mono   | hitai_full    | lagged        | gbt_mono | 16373 |    0.6977 |  0.2495 | 0.0051 | 0.4965 |       0.545 |             0.0238 |                 0.6942 |             0.3946 |           0.2049 |          0.0643 |          0.86   |    0.7323 |      -0.2347 |    0.3855 |         21 |
+| hitai_full|masked|logit      | hitai_full    | masked        | logit    | 16373 |    0.6945 |  0.2493 | 0.008  | 0.4966 |       0.545 |             0.0199 |                 0.6922 |             0.2321 |          -0.2199 |          0.1414 |          0.8312 |    0.2493 |      -0.348  |    0.0545 |         21 |
+| hitai_full|masked|gbt        | hitai_full    | masked        | gbt      | 16373 |    0.7057 |  0.2508 | 0.011  | 0.4901 |       0.545 |             0.0411 |                 0.6991 |             0.4066 |           0.2997 |          0.037  |          0.9677 |    0.817  |      -0.2364 |    0.4984 |         21 |
+| hitai_full|masked|gbt_mono   | hitai_full    | masked        | gbt_mono | 16373 |    0.6959 |  0.2497 | 0.005  | 0.4955 |       0.545 |             0.0243 |                 0.6943 |             0.3318 |           0.1436 |          0.0635 |          0.8476 |    0.6683 |      -0.2577 |    0.3166 |         21 |
+
+## Hypothesis tests
+
+| hypothesis   | model    | comparison                                               |    stat |   p_one_sided |   mean_loss_diff | confirmatory   |   p_holm |   p_bonferroni |   p_bh_all |
+|:-------------|:---------|:---------------------------------------------------------|--------:|--------------:|-----------------:|:---------------|---------:|---------------:|-----------:|
+| H1           | logit    | rules_only - hitai_full (logloss)                        | -1.0223 |        0.8467 |          -0.003  | False          | nan      |       nan      |     0.9358 |
+| H3a          | logit    | rules_tech - hitai_full                                  | -0.3995 |        0.6552 |          -0.0001 | False          | nan      |       nan      |     0.9358 |
+| H3b          | logit    | hitai_full[shuffled] - hitai_full[pit]                   |  2.3094 |        0.0105 |           0.017  | False          | nan      |       nan      |     0.0439 |
+| H3c          | logit    | hitai_full[lagged] - hitai_full[pit]                     | -0.6374 |        0.7381 |          -0.0008 | False          | nan      |       nan      |     0.9358 |
+| H2a          | logit    | Spiegelhalter z (H0 calibrated; want NOT rejected)       |  1.8383 |        0.066  |         nan      | False          | nan      |       nan      |     0.1733 |
+| H2b          | logit    | Spearman(|p-.5|, hit) on non-overlapping dates           | -0.0012 |        0.5249 |         nan      | False          | nan      |       nan      |     0.9186 |
+| H4a          | logit    | masked - unmasked logloss (two-sided; want NOT rejected) |  0.4834 |        0.6288 |           0.0005 | False          | nan      |       nan      |     0.9358 |
+| H1           | gbt      | rules_only - hitai_full (logloss)                        | -2.5611 |        0.9948 |          -0.0069 | False          | nan      |       nan      |     0.9986 |
+| H3a          | gbt      | rules_tech - hitai_full                                  |  1.6396 |        0.0505 |           0.0016 | False          | nan      |       nan      |     0.1516 |
+| H3b          | gbt      | hitai_full[shuffled] - hitai_full[pit]                   |  1.0378 |        0.1497 |           0.001  | False          | nan      |       nan      |     0.3143 |
+| H3c          | gbt      | hitai_full[lagged] - hitai_full[pit]                     |  2.9727 |        0.0015 |           0.0154 | False          | nan      |       nan      |     0.0103 |
+| H2a          | gbt      | Spiegelhalter z (H0 calibrated; want NOT rejected)       |  3.3623 |        0.0008 |         nan      | False          | nan      |       nan      |     0.0081 |
+| H2b          | gbt      | Spearman(|p-.5|, hit) on non-overlapping dates           | -0.0173 |        0.8173 |         nan      | False          | nan      |       nan      |     0.9358 |
+| H4a          | gbt      | masked - unmasked logloss (two-sided; want NOT rejected) |  2.2321 |        0.0256 |           0.0079 | False          | nan      |       nan      |     0.0896 |
+| H1           | gbt_mono | rules_only - hitai_full (logloss)                        | -2.9785 |        0.9986 |          -0.0097 | True           |   1      |         1      |     0.9986 |
+| H3a          | gbt_mono | rules_tech - hitai_full                                  |  0.5909 |        0.2773 |           0.0002 | True           |   1      |         1      |     0.5294 |
+| H3b          | gbt_mono | hitai_full[shuffled] - hitai_full[pit]                   |  2.5427 |        0.0055 |           0.0017 | True           |   0.0275 |         0.0275 |     0.0289 |
+| H3c          | gbt_mono | hitai_full[lagged] - hitai_full[pit]                     | -0.7733 |        0.7803 |          -0.002  | True           |   1      |         1      |     0.9358 |
+| H2a          | gbt_mono | Spiegelhalter z (H0 calibrated; want NOT rejected)       |  4.8735 |        0      |         nan      | False          | nan      |       nan      |     0      |
+| H2b          | gbt_mono | Spearman(|p-.5|, hit) on non-overlapping dates           | -0.0107 |        0.7121 |         nan      | True           |   1      |         1      |     0.9358 |
+| H4a          | gbt_mono | masked - unmasked logloss (two-sided; want NOT rejected) | -1.7849 |        0.0743 |          -0.0039 | False          | nan      |       nan      |     0.1733 |
+
+## Reality check / SPA vs rules_only: RC p=0.997, SPA p=1.000
